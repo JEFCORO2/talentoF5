@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\PruebaController;
+use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PrincipalController;
@@ -35,5 +36,7 @@ Route::get('/{user:name}/video', [PruebaController::class, 'index'])->name('prue
 Route::get('/{user:name}/color', [PruebaController::class, 'index'])->name('prueba.color')->defaults('vista', 'color');
 Route::post('/{user:name}/subirVideo', [PruebaController::class, 'subirVideo'])->name('prueba.subir');
 Route::post('/{user:name}/guardarNota', [PruebaController::class, 'guardarNota'])->name('prueba.nota');
+Route::get('/{user:name}/send', [ChatBotController::class, 'index']);
+Route::post('send', [ChatBotController::class, 'sendChat'])->name('chat.respuesta');
 
 Route::get('/{user:name}', [PrincipalController::class, 'index'])->name('principal.index')->middleware('auth');
