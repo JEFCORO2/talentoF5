@@ -20,7 +20,7 @@
     @endif
     
  
-    <div class="">
+    <div class="container">
         <div class="d-flex flex-row mb-3 justify-content-center align-items-center mt-5">
     
             <div class="w-25 h-25 d-inline-block">
